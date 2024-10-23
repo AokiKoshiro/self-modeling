@@ -1,0 +1,25 @@
+seed: 42
+
+device: "cuda"
+
+data:
+  batch_size_train: 256
+  batch_size_test: 1000
+  normalize:
+    mean: [0.1307]
+    std: [0.3081]
+
+model:
+  input_size: 784  # 28*28
+  hidden_sizes: [64, 128, 256, 512]
+  num_classes: 10
+
+train:
+  num_epochs: 10
+  num_runs: 5
+  learning_rate: 0.001
+  aw_values: [0, 1, 10, 50]
+  l2_lambdas: [0, 0.1, 1, 10]
+
+measure_complexity:
+  pruning_interval: 0.1
